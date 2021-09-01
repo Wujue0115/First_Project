@@ -23,16 +23,28 @@ def get_random_time(min_year = 2000, max_year = 2020) -> str:
 
     year = rd.randint(min_year, max_year)
     month = rd.randint(1, 12)
+    month_space = "0" * (2 - len(str(month)))
 
     if year % 4 == 0 and year % 100 != 0 or year % 400 == 0: max_day[2] = 29
     else: max_day[2] = 28
     day = rd.randint(1, max_day[month])
+    day_space = "0" * (2 - len(str(day)))
 
+    time1 = f"{year}/{month_space}{month}/{day_space}{day}"
+
+    
     hour = rd.randint(0, 23)
+    hour_space = "0" * (2 - len(str(hour)))
     minute = rd.randint(0, 59)
+    minute_space = "0" * (2 - len(str(minute)))
     second = rd.randint(0, 59)
+    second_space = "0" * (2 - len(str(second)))
 
-    return f"{year}/{month}/{day} {hour}:{minute}:{second}"
+    time2 = f"{hour_space}{hour}:{minute_space}{minute}:{second_space}{second}"
+
+    space = 19 - (len(time1) + len(time2))
+
+    return time1 + " " + time2
 
 
 def get_random_commodity() -> str:
@@ -66,7 +78,7 @@ collection.drop()
 
 
 names = data_to_names(path = "data/names_data.txt")
-n = int(1e4)
+n = int(1e5)
 orders = []
 for i in range(0, n):
     name = get_random_name()

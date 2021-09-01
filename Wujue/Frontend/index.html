@@ -12,20 +12,28 @@
 <body>
     <div class="wrap">
         <div id="search-block">
-            <input id="search-text" placeholder="請輸入訂單編號" value="">
-            <button id="search-button">搜尋</button>
-            <button id="delete-button">清空所有資料</button>
+            <input id="text-id" placeholder="Please input order ID" value="">
+            <input id="text-name" placeholder="Please input your name" value="">
+            <div>
+                <button id="search-button">Search</button>
+                <!--button id="clear-button">Clear all data</button-->
+            </div>
         </div>
-        <div id="print-block">
-            <table id="orders-table">
-                <tr>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>commodity</th>
-                    <th>price</th>
-                    <th>status</th>
-                </tr>
-            </table>
+        <div id="order-block">
+            <div class="order-div" value="0">
+                <div class="first-property">
+                    <div class="checkbox-div">
+                        <div class="checkbox-text">&#10003</div>
+                    </div>
+                </div>
+                <div class="property" id="order-id">ID</div>
+                <div class="property" id="order-name">Name</div>
+                <div class="time-property" id="order-name">Time</div>
+                <div class="property" id="order-commondity">Commodity</div>
+                <div class="property" id="order-price">Price</div>
+                <div class="property" id="order-status">Status</div>
+            </div>
+            
         </div>
     </div>
 

@@ -1,32 +1,86 @@
 html, body {
+    /** font-family: "DFKai-SB"; /**/
+    font-size: 20px;
     margin: 0; 
     padding: 0;
+    
 }
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-th {
-    padding: 2px 20px;
+input, button {
+    font-family: "Times New Roman";
+    font-size: 20px;
+    margin: 5px;
 }
 
 .wrap {
     /** background: #f00; /**/
     display: flex;
+    font-family: "標楷體";
+    margin-top: 30px;
     position: absolute;
     width: 100vw;
 }
 
 #search-block {
     /** background: #fa0; /**/
+    box-shadow: 1px 1px 3px 1px #000;
+    height: 120px;
+    margin-left: 5%;
     padding: 10px;
+    text-align: center;
     width: 20%;
 }
 
-#print-block {
+#order-block {
     /** background: #0f0; /**/
-    padding: 10px;
-    width: 80%;
+    width: 75%;
+}
+
+.order-div {
+    /** background: #fa0; /**/
+    box-shadow: 1px 1px 3px 1px #000;
+    display: flex;
+    height: 40px;
+    margin: auto;
+    width: 85%;
+}
+
+.first-property {
+    /** border: 1px solid #000; /**/
+    margin: auto;
+    text-align: center;
+    width: 5%;
+}
+
+.property {
+    /** border: 1px solid #000; /**/
+    margin: auto;
+    text-align: center;
+    width: 15%;
+}
+
+.time-property {
+    /** border: 1px solid #000; /**/
+    margin: auto;
+    text-align: center;
+    width: 25%;
+}
+
+.checkbox-div {
+    /** background: #f00; /**/
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-size: 15px;
+    height: 15px;
+    margin: auto;
+    width: 15px;
+}
+
+.checkbox-text {
+    position: relative;
+    top: -1px;
+}
+
+.checkbox-div:active {
+    background: #fa0;
 }

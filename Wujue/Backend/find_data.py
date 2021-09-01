@@ -8,18 +8,20 @@ client = MongoClient("mongodb://localhost:27017")
 db = client.test_database
 collection = db.test_collection
 
-
 app = Flask(__name__)
 CORS(app, supports_credentials = True)
 @app.route("/find_order", methods = ["POST"])
 def find_order():
-    data = request.get_json()
-    find_data = collection.find({"_id": {"$lt": int(data["id"])}})
+    data = request.get_json()    
     res = []
-    for i in find_data:
-        print(type(i))
-        print(i)
+
+    if len(data["id"]) > 0:
+        for i in collection.find({"_id": {"$eq": int(data["id"])}}):
+            res.append(i)
+
+    for i in collection.find({"name": data["name"].capitalize()}):
         res.append(i)
+
     return {"orders": res}
 
 if __name__ == "__main__":
